@@ -1,0 +1,30 @@
+{% extends "partials/layout.njk" %}
+{% block title %}Register{% endblock %}
+{% block content %}
+  {% if errors %}
+      {% for error in errors %}
+        <div class="alert alert-danger" role="alert">
+          {{error}}
+        </div>
+      {% endfor %}
+  {% endif %}
+  <form action="/register" method="POST">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input id="name" class="form-control" type="text" placeholder="Name" name="name">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" class="form-control" type="email" placeholder="Email" name="email">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input id="password" class="form-control" type="password" placeholder="Password" name="password">
+    </div>
+    <div class="mb-3">
+        <label for="password_confirm" class="form-label">Password Confirm</label>
+        <input id="password_confirm" class="form-control" type="password" placeholder="Password Confirmation" name="password_confirm">
+    </div>
+    <input class="btn btn-primary" type="submit" value="Register">
+  </form>
+{% endblock %}

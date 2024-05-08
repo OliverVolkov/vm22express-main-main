@@ -1,0 +1,23 @@
+{% extends "partials/layout.njk" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+{% include "partials/pagination.njk" %}
+
+<div class="row">
+    {% for movie in movies%}
+    <div class="col-3 mb-3">
+        <div class="card h-100">
+        <div class="card-body">
+            <h5 class="card-title">{{movie.name}}</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">{{movie.year}}</h6>
+            <p class="card-text">{{movie.snippet()}}...</p>
+        </div>
+         <div class="card-footer">
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
