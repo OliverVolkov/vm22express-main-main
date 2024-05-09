@@ -6,6 +6,7 @@
 
 <div class="row">
     {% for movie in movies%}
+    
     <div class="col-3 mb-3">
         <div class="card h-100">
         <div class="card-body">
@@ -14,7 +15,7 @@
             <p class="card-text">{{movie.snippet()}}...</p>
         </div>
          <div class="card-footer">
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="/movies/view?id= {{ movie.id }} "  class="btn btn-primary">View</a>
         </div>
     </div>
   </div>
